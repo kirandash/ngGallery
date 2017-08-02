@@ -31,3 +31,14 @@ cd src/app
 mkdir navbar
 
 touch navbar.component.html navbar.component.css navbar.component.ts
+
+cd src/app
+
+mkdir gallery
+
+touch gallery.component.html gallery.component.css gallery.component.ts
+
+touch image-detail.component.ts image-detail.component.html image-detail.component.css
+
+## Move file to Production
+ ng build --prod
