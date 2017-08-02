@@ -8,12 +8,16 @@ import { ImageService } from '../image/shared/image.service';
 	styleUrls: ['./gallery.component.css']
 })
 
-export class GalleryComponent {
+export class GalleryComponent implements OnChanges {
 	title = 'Recent Photos';
-	@Input() filterBy?: string = 'all'; 
+	@Input() filterBy?: string = 'all'; // For gallery filter, create an input filterBy of type string
 	visibleImages: any[] = [];
 
 	constructor(private imageService: ImageService){
+		this.visibleImages = this.imageService.getImages();
+	}
+
+	ngOnChanges() {
 		this.visibleImages = this.imageService.getImages();
 	}
 }
